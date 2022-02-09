@@ -9,6 +9,7 @@ ssh-add $id_file
 echo "Host github.com" >> ~/.ssh/config 
 echo "    User git " >> ~/.ssh/config
 echo "    IdentityFile $id_file" >> ~/.ssh/config
+chmod 700  ~/.ssh/config
 
 
 sudo apt update 
