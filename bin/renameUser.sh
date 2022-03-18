@@ -13,11 +13,7 @@ while :; do
     esac
 done
 
-exec sudo -i
-killall -u $1
-id $1
-usermod -l $2 $1
-groupmod -n $2 $1
-usermod -d /home/$2 -m $2
-usermod -c "[full name (new)]" $2 
-id $2
+
+usermod --login $2 --move-home --home /home/$2 $1
+groupmod --new-name $2 $1 
+
